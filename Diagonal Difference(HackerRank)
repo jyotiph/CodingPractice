@@ -1,7 +1,7 @@
 /* Given a square matrix of size N×N, calculate the absolute 
 difference of the sums across the two main diagonals */
 
-import java.util.*;
+import java.util.Scanner;
 import java.lang.*;
 
 public class Solution {
