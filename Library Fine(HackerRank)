@@ -1,0 +1,38 @@
+/* Write a program that calculates the fine for returning the book after the return date. Input is the actual and the expected return dates. Calculate the fine as follows:
+- If the book is returned on or before the expected return date, no fine.
+- If the book is returned in the same calendar month as the expected return date, Fine = 15 Dolarrs × Number of late days
+- If the book is not returned in the same calendar month but in the same calendar year, fine = 500 Dollars × - -Number of late months
+- If the book is not returned in the same calendar year, the fine is fixed at 10000 Dollars */
+
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        final int D=0, M=1, Y=2;
+        Scanner s = new Scanner(System.in);
+        int actual[] = new int[3], expected[] = new int [3], fine;
+        for(int i=0; i<3; i++){
+            actual[i]=s.nextInt();
+        }
+        for(int i=0; i<3; i++){
+            expected[i]=s.nextInt();
+        }
+ 
+        if(actual[Y] < expected[Y]){ fine = 0;}
+        else if (actual[Y] == expected[Y]){
+            if(actual[M] < expected[M]){
+                fine = 0;
+            }
+            else if(actual[M] == expected[M] && actual[D] > expected[D]){
+                fine = 15 * (actual[D] - expected[D]);
+            }
+            else{
+            fine = 500 * (actual[M] - expected[M]);
+            }
+        }
+        else 
+            fine = 10000;
+        
+        System.out.println(fine);
+    }
+}
