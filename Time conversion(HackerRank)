@@ -1,0 +1,24 @@
+/* Convert the time given in AM/PM format into a 24 hour format */
+
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int h, m, s;
+        String in = new String(input.nextLine());
+        String time[] = in.split(":");
+        h = Integer.parseInt(time[0]);
+        m = Integer.parseInt(time[1]);
+        s = Integer.parseInt(time[2].substring(0,2));
+        String AmPm = time[2].substring(2);
+        
+        if(AmPm.compareTo("PM") == 0 && h!=12){
+            h += 12;
+        }
+        else if(AmPm.compareTo("AM") == 0 && h==12){
+            h = 0;
+        }
+        System.out.printf("%02d:%02d:%02d",h,m,s);
+    }
+}
