@@ -1,6 +1,6 @@
 /* Given an array containing integer values, print the fraction of count of positive numbers, negative numbers and zeroes to the total numbers. Print the output value correct to 6 decimal places. */
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
