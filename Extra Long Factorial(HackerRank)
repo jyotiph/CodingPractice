@@ -1,0 +1,21 @@
+/* Find N factorial where 1 < N < 100 */
+
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        BigInteger input = BigInteger.valueOf(s.nextLong());
+        
+        System.out.println(fact(input));
+    }
+    
+    public static BigInteger fact(BigInteger arg){
+        if(arg.compareTo(BigInteger.ONE) == 0)
+            return BigInteger.ONE;
+        return(arg.multiply(fact(arg.subtract(BigInteger.ONE))));
+    }
+}
